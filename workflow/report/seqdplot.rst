@@ -1,0 +1,1 @@
+A State distribution plot (type="d") represents the sequence of the cross-sectional state frequencies by position (time point) computed by the seqstatd function and rendered with the plot.stslist.statd method. Such plots are also known as chronograms. 

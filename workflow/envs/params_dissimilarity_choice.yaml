@@ -1,0 +1,7 @@
+name: params_dissimilarity_choice
+channels:
+  - conda-forge
+  - bioconda
+dependencies:
+  - r-base =4.4.0
+  - r-tidyverse =2.0

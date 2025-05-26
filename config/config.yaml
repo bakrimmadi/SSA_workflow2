@@ -1,0 +1,48 @@
+# chemin_bdd : Chemin du fichier avec le nom de la base de données et son extension
+samples: "resources/data/20240312 Tab_Univ_complete_finale.csv"
+# bdd_format : Format de la bdd (Long ou wide)    
+bdd_format: "Long"
+# var_id : nom de la variable 
+var_id: "Id"
+# var_rep : nom(s) de la ou des variables réponses
+var_rep: "Gaz"
+# labels : vecteur contenant les labels des modalités de la variables réponses
+labels: "AIR, NOXBouteille, NOXCRABE, Oxygen"
+# path_result : chemin indiquant où exporter les résultats
+path_result: "results/plots"
+# expert : Profil expert (1 : Oui 0: Non)
+expert: 1
+# dissimilarite_expert : Vecteur de dissimilarité saisi par l'expert ex : "OM, OMspell, LCS"
+dissimilarite_expert: ""
+# fusion_dissimilarites : Fusion des dissimilarités issus des critères et les dissimilarités renseignés par l'utilisateur
+fusion_dissimilarites: 0
+# choix_criteres : Choix des critères 
+choix_criteres: 
+  # sequencement : Interet du sequencement TRUE/FALSE
+  sequencement: "TRUE"
+  # timing : Interet du timing TRUE/FALSE
+  timing: "FALSE"
+  # duree_etats : Interet de la duree des etats distincts TRUE/FALSE
+  duree_etats: "TRUE"
+  # sequencement_perturbation : Interet de la sensibilité aux petites perturbations TRUE/FALSE
+  sequencement_perturbation: "FALSE"
+  # timing_etatsRares : Interet particulier pour les etats rares TRUE/FALSE
+  timing_etatsRares: "FALSE"
+# Choix des paramètres selon la dissimilarité
+# dissimilarité : OM
+bounds_OM:
+  seqsubm: "c(0L,4L)" #Valeurs entières entre 0 et 4
+# dissimilarité : OMstran
+bounds_OMstran:
+  seqsubm: "c(0L,4L)" #Valeurs entières entre 0 et 4 
+  transindel: "c(0L,2L)" #Valeurs entières entre 0 et 2
+  otto: "c(0.0001, 1)"
+# dissimilarité : OMspell
+bounds_OMspell:
+  seqsubm: "c(0L,4L)" #Valeurs entières entre 0 et 4
+  expcost: "c(0,3)"
+# dissimilarité : SVRspell
+bounds_SVRspell:
+  a: "c(0,3)"
+  b: "c(0,3)"
+  tpow: "c(0, 3)"

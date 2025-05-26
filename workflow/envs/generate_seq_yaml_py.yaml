@@ -1,0 +1,8 @@
+name: generate_seq_yaml
+channels:
+  - conda-forge
+dependencies:
+  - python=3.9
+  - pandas
+  - pyyaml
+

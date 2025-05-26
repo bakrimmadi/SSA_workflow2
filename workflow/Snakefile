@@ -1,0 +1,26 @@
+
+
+##### setup report #####
+configfile: "../config/config.yaml"
+
+report: "report/workflow.rst"
+
+rule all:
+    input:
+        os.path.join(config["path_result"], "seqfplot_top10.png"),
+        os.path.join(config["path_result"], "seq_heatmap.png"),
+        os.path.join(config["path_result"], "seqIplot.png"),
+        os.path.join(config["path_result"], "seqdplot.png"),
+        os.path.join(config["path_result"], "seqfplot.png"),
+        os.path.join(config["path_result"], "seqmtplot.png"),
+        os.path.join(config["path_result"], "seqrplot.png"),
+        os.path.join(config["path_result"], "seqHtplot.png"),
+        "resources/datavzrd/seq.yaml",
+        "results/tables/seq"
+
+##### load rules #####
+include: "rules/import_seqdef.smk"
+include: "rules/dissimilarity_parameters.smk"
+include: "rules/optimal_dissimilarity.smk"
+include: "rules/clusters_results.smk"
+include: "rules/view_with_datavzrd.smk"

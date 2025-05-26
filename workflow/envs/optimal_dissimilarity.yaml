@@ -1,0 +1,12 @@
+name: optimal_dissimilarity
+channels:
+  - conda-forge
+  - bioconda
+dependencies:
+  - r-base =4.3.3
+  - r-tidyverse =2.0
+  - r-dynamictreecut =1.63.1
+  - r-weightedcluster =1.6.4
+  - r-fpc =2.2.11
+  - r-janitor =2.2.1
+  - r-parbayesianoptimization =1.2.6

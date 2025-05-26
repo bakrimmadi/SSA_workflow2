@@ -1,0 +1,1 @@
+A Sequence frequency plots (type="f") displays the most frequent sequences, each one with an horizontal stack bar of its successive states. Sequences are displayed bottom-up in decreasing order of their frequencies (computed by the seqtab function). The plot.stslist.freq plot method is called for producing the plot. 

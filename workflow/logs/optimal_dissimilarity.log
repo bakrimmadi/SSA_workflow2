@@ -1,0 +1,535 @@
+Le chargement a nécessité le package : TraMineR
+
+TraMineR stable version 2.2-11 (Built: 2024-12-10)
+Website: http://traminer.unige.ch
+Please type 'citation("TraMineR")' for citation information.
+
+Le chargement a nécessité le package : cluster
+This is WeightedCluster stable version 1.6-4 (Built: 2024-07-31)
+
+To get the manuals, please run:
+   vignette("WeightedCluster") ## Complete manual in English
+   vignette("WeightedClusterFR") ## Complete manual in French
+   vignette("WeightedClusterPreview") ## Short preview in English
+
+To cite WeightedCluster in publications please use:
+Studer, Matthias (2013). WeightedCluster Library Manual: A practical
+   guide to creating typologies of trajectories in the social sciences
+   with R. LIVES Working Papers, 24. doi:
+   10.12682/lives.2296-1658.2013.24
+
+Attachement du package : ‘janitor’
+
+Les objets suivants sont masqués depuis ‘package:stats’:
+
+    chisq.test, fisher.test
+
+
+Running initial scoring function 4 times in 1 thread(s)... [>] creating substitution-cost matrix using transition rates ...
+ [>] computing transition probabilities for states Employement/Further Educ/High Educ/Joblessness/School/Training ...
+ [>] 712 sequences with 6 distinct states
+ [>] checking 'sm' (size and triangle inequality)
+ [>] 557 distinct  sequences 
+ [>] min/max sequence lengths: 72/72
+ [>] computing distances using the OMstran metric
+ [>] Creating 34 distinct transition states
+ [>] elapsed time: 5.612 secs
+ [>] creating 6x6 substitution-cost matrix using 2 as constant value
+ [>] 712 sequences with 6 distinct states
+ [>] checking 'sm' (size and triangle inequality)
+ [>] 557 distinct  sequences 
+ [>] min/max sequence lengths: 72/72
+ [>] computing distances using the OMstran metric
+ [>] computing transition probabilities for states Employement/Further Educ/High Educ/Joblessness/School/Training ...
+ [>] Creating 34 distinct transition states
+ [>] elapsed time: 5.789 secs
+ [>] 712 sequences with 6 distinct states
+ [>] checking 'sm' (size and triangle inequality)
+ [>] 557 distinct  sequences 
+ [>] min/max sequence lengths: 72/72
+ [>] computing distances using the OMstran metric
+ [>] Creating 34 distinct transition states
+ [>] elapsed time: 5.847 secs
+ [>] 712 sequences with 6 distinct states
+ [>] checking 'sm' (size and triangle inequality)
+ [>] 557 distinct  sequences 
+ [>] min/max sequence lengths: 72/72
+ [>] computing distances using the OMstran metric
+ [>] Creating 34 distinct transition states
+ [>] elapsed time: 5.841 secs
+ [>] creating 6x6 substitution-cost matrix using 2 as constant value
+ [>] 712 sequences with 6 distinct states
+ [>] checking 'sm' (size and triangle inequality)
+ [>] 557 distinct  sequences 
+ [>] min/max sequence lengths: 72/72
+ [>] computing distances using the OMstran metric
+ [>] Creating 34 distinct transition states
+ [>] elapsed time: 5.874 secs
+ [>] creating 6x6 substitution-cost matrix using 2 as constant value
+ [>] 712 sequences with 6 distinct states
+ [>] checking 'sm' (size and triangle inequality)
+ [>] 557 distinct  sequences 
+ [>] min/max sequence lengths: 72/72
+ [>] computing distances using the OMstran metric
+ [>] computing transition probabilities for states Employement/Further Educ/High Educ/Joblessness/School/Training ...
+ [>] Creating 34 distinct transition states
+ [>] elapsed time: 5.652 secs
+ [>] 712 sequences with 6 distinct states
+ [>] checking 'sm' (size and triangle inequality)
+ [>] 557 distinct  sequences 
+ [>] min/max sequence lengths: 72/72
+ [>] computing distances using the OMstran metric
+ [>] Creating 34 distinct transition states
+ [>] elapsed time: 5.745 secs
+ [>] creating 6x6 substitution-cost matrix using 2 as constant value
+ [>] 712 sequences with 6 distinct states
+ [>] checking 'sm' (size and triangle inequality)
+ [>] 557 distinct  sequences 
+ [>] min/max sequence lengths: 72/72
+ [>] computing distances using the OMstran metric
+ [>] Creating 34 distinct transition states
+ [>] elapsed time: 5.626 secs
+ [>] creating 6x6 substitution-cost matrix using 2 as constant value
+ [>] 712 sequences with 6 distinct states
+ [>] checking 'sm' (size and triangle inequality)
+ [>] 557 distinct  sequences 
+ [>] min/max sequence lengths: 72/72
+ [>] computing distances using the OMstran metric
+ [>] Creating 34 distinct transition states
+ [>] elapsed time: 5.777 secs
+ [>] creating substitution-cost matrix using common future...
+ [>] computing transition probabilities for states Employement/Further Educ/High Educ/Joblessness/School/Training ...
+ [>] 712 sequences with 6 distinct states
+ [>] checking 'sm' (size and triangle inequality)
+ [>] 557 distinct  sequences 
+ [>] min/max sequence lengths: 72/72
+ [>] computing distances using the OMstran metric
+ [>] computing transition probabilities for states Employement/Further Educ/High Educ/Joblessness/School/Training ...
+ [>] Creating 34 distinct transition states
+ [>] elapsed time: 5.713 secs
+ [>] creating 6x6 substitution-cost matrix using 2 as constant value
+ [>] 712 sequences with 6 distinct states
+ [>] checking 'sm' (size and triangle inequality)
+ [>] 557 distinct  sequences 
+ [>] min/max sequence lengths: 72/72
+ [>] computing distances using the OMstran metric
+ [>] Creating 34 distinct transition states
+ [>] elapsed time: 5.758 secs
+ [>] creating 6x6 substitution-cost matrix using 2 as constant value
+ [>] 712 sequences with 6 distinct states
+ [>] checking 'sm' (size and triangle inequality)
+ [>] 557 distinct  sequences 
+ [>] min/max sequence lengths: 72/72
+ [>] computing distances using the OMstran metric
+ [>] Creating 34 distinct transition states
+ [>] elapsed time: 5.764 secs
+ [>] creating 6x6 substitution-cost matrix using 2 as constant value
+ [>] 712 sequences with 6 distinct states
+ [>] checking 'sm' (size and triangle inequality)
+ [>] 557 distinct  sequences 
+ [>] min/max sequence lengths: 72/72
+ [>] computing distances using the OMstran metric
+ [>] Creating 34 distinct transition states
+ [>] elapsed time: 5.866 secs
+ [>] creating substitution-cost matrix using transition rates ...
+ [>] computing transition probabilities for states Employement/Further Educ/High Educ/Joblessness/School/Training ...
+ [>] 712 sequences with 6 distinct states
+ [>] checking 'sm' (size and triangle inequality)
+ [>] 557 distinct  sequences 
+ [>] min/max sequence lengths: 72/72
+ [>] computing distances using the OMstran metric
+ [>] Creating 34 distinct transition states
+ [>] elapsed time: 5.628 secs
+ [>] creating 6x6 substitution-cost matrix using 2 as constant value
+ [>] 712 sequences with 6 distinct states
+ [>] checking 'sm' (size and triangle inequality)
+ [>] 557 distinct  sequences 
+ [>] min/max sequence lengths: 72/72
+ [>] computing distances using the OMstran metric
+ [>] computing transition probabilities for states Employement/Further Educ/High Educ/Joblessness/School/Training ...
+ [>] Creating 34 distinct transition states
+ [>] elapsed time: 5.732 secs
+ [>] 712 sequences with 6 distinct states
+ [>] checking 'sm' (size and triangle inequality)
+ [>] 557 distinct  sequences 
+ [>] min/max sequence lengths: 72/72
+ [>] computing distances using the OMstran metric
+ [>] Creating 34 distinct transition states
+ [>] elapsed time: 5.696 secs
+ [>] 712 sequences with 6 distinct states
+ [>] checking 'sm' (size and triangle inequality)
+ [>] 557 distinct  sequences 
+ [>] min/max sequence lengths: 72/72
+ [>] computing distances using the OMstran metric
+ [>] computing transition probabilities for states Employement/Further Educ/High Educ/Joblessness/School/Training ...
+ [>] Creating 34 distinct transition states
+ [>] elapsed time: 5.95 secs
+ [>] 712 sequences with 6 distinct states
+ [>] checking 'sm' (size and triangle inequality)
+ [>] 557 distinct  sequences 
+ [>] min/max sequence lengths: 72/72
+ [>] computing distances using the OMstran metric
+ [>] Creating 34 distinct transition states
+ [>] elapsed time: 5.699 secs
+ [>] creating substitution-cost matrix using common future...
+ [>] computing transition probabilities for states Employement/Further Educ/High Educ/Joblessness/School/Training ...
+ [>] 712 sequences with 6 distinct states
+ [>] checking 'sm' (size and triangle inequality)
+ [>] 557 distinct  sequences 
+ [>] min/max sequence lengths: 72/72
+ [>] computing distances using the OMstran metric
+ [>] computing transition probabilities for states Employement/Further Educ/High Educ/Joblessness/School/Training ...
+ [>] Creating 34 distinct transition states
+ [>] elapsed time: 5.772 secs
+ [>] 712 sequences with 6 distinct states
+ [>] checking 'sm' (size and triangle inequality)
+ [>] 557 distinct  sequences 
+ [>] min/max sequence lengths: 72/72
+ [>] computing distances using the OMstran metric
+ [>] Creating 34 distinct transition states
+ [>] elapsed time: 5.746 secs
+ [>] creating 6x6 substitution-cost matrix using 2 as constant value
+ [>] 712 sequences with 6 distinct states
+ [>] checking 'sm' (size and triangle inequality)
+ [>] 557 distinct  sequences 
+ [>] min/max sequence lengths: 72/72
+ [>] computing distances using the OMstran metric
+ [>] Creating 34 distinct transition states
+ [>] elapsed time: 5.712 secs
+ [>] creating substitution-cost matrix using common future...
+ [>] computing transition probabilities for states Employement/Further Educ/High Educ/Joblessness/School/Training ...
+ [>] 712 sequences with 6 distinct states
+ [>] checking 'sm' (size and triangle inequality)
+ [>] 557 distinct  sequences 
+ [>] min/max sequence lengths: 72/72
+ [>] computing distances using the OMstran metric
+ [>] computing transition probabilities for states Employement/Further Educ/High Educ/Joblessness/School/Training ...
+ [>] Creating 34 distinct transition states
+ [>] elapsed time: 5.785 secs
+ [>] creating 6x6 substitution-cost matrix using 2 as constant value
+ [>] 712 sequences with 6 distinct states
+ [>] checking 'sm' (size and triangle inequality)
+ [>] 557 distinct  sequences 
+ [>] min/max sequence lengths: 72/72
+ [>] computing distances using the OMstran metric
+ [>] Creating 34 distinct transition states
+ [>] elapsed time: 5.674 secs
+ [>] creating 6x6 substitution-cost matrix using 2 as constant value
+ [>] 712 sequences with 6 distinct states
+ [>] checking 'sm' (size and triangle inequality)
+ [>] 557 distinct  sequences 
+ [>] min/max sequence lengths: 72/72
+ [>] computing distances using the OMstran metric
+ [>] Creating 34 distinct transition states
+ [>] elapsed time: 5.78 secs
+ [>] 712 sequences with 6 distinct states
+ [>] checking 'sm' (size and triangle inequality)
+ [>] 557 distinct  spell sequences 
+ [>] min/max spell sequence lengths: 1/11
+ [>] computing distances using the OMspell metric
+ [>] elapsed time: 0.276 secs
+ [>] 712 sequences with 6 distinct states
+ [>] checking 'sm' (size and triangle inequality)
+ [>] 557 distinct  spell sequences 
+ [>] min/max spell sequence lengths: 1/11
+ [>] computing distances using the OMspell metric
+ [>] elapsed time: 0.258 secs
+ [>] creating substitution-cost matrix using transition rates ...
+ [>] computing transition probabilities for states Employement/Further Educ/High Educ/Joblessness/School/Training ...
+ [>] 712 sequences with 6 distinct states
+ [>] checking 'sm' (size and triangle inequality)
+ [>] 557 distinct  spell sequences 
+ [>] min/max spell sequence lengths: 1/11
+ [>] computing distances using the OMspell metric
+ [>] elapsed time: 0.257 secs
+ [>] 712 sequences with 6 distinct states
+ [>] checking 'sm' (size and triangle inequality)
+ [>] 557 distinct  spell sequences 
+ [>] min/max spell sequence lengths: 1/11
+ [>] computing distances using the OMspell metric
+ [>] elapsed time: 0.257 secs
+ [>] 712 sequences with 6 distinct states
+ [>] checking 'sm' (size and triangle inequality)
+ [>] 557 distinct  spell sequences 
+ [>] min/max spell sequence lengths: 1/11
+ [>] computing distances using the OMspell metric
+ [>] elapsed time: 0.273 secs
+ [>] 712 sequences with 6 distinct states
+ [>] checking 'sm' (size and triangle inequality)
+ [>] 557 distinct  spell sequences 
+ [>] min/max spell sequence lengths: 1/11
+ [>] computing distances using the OMspell metric
+ [>] elapsed time: 0.271 secs
+ [>] creating substitution-cost matrix using transition rates ...
+ [>] computing transition probabilities for states Employement/Further Educ/High Educ/Joblessness/School/Training ...
+ [>] 712 sequences with 6 distinct states
+ [>] checking 'sm' (size and triangle inequality)
+ [>] 557 distinct  spell sequences 
+ [>] min/max spell sequence lengths: 1/11
+ [>] computing distances using the OMspell metric
+ [>] elapsed time: 0.273 secs
+ [>] creating 6x6 substitution-cost matrix using 2 as constant value
+ [>] 712 sequences with 6 distinct states
+ [>] checking 'sm' (size and triangle inequality)
+ [>] 557 distinct  spell sequences 
+ [>] min/max spell sequence lengths: 1/11
+ [>] computing distances using the OMspell metric
+ [>] elapsed time: 0.262 secs
+ [>] 712 sequences with 6 distinct states
+ [>] checking 'sm' (size and triangle inequality)
+ [>] 557 distinct  spell sequences 
+ [>] min/max spell sequence lengths: 1/11
+ [>] computing distances using the OMspell metric
+ [>] elapsed time: 0.264 secs
+ [>] creating 6x6 substitution-cost matrix using 2 as constant value
+ [>] 712 sequences with 6 distinct states
+ [>] checking 'sm' (size and triangle inequality)
+ [>] 557 distinct  spell sequences 
+ [>] min/max spell sequence lengths: 1/11
+ [>] computing distances using the OMspell metric
+ [>] elapsed time: 0.262 secs
+ [>] 712 sequences with 6 distinct states
+ [>] checking 'sm' (size and triangle inequality)
+ [>] 557 distinct  spell sequences 
+ [>] min/max spell sequence lengths: 1/11
+ [>] computing distances using the OMspell metric
+ [>] elapsed time: 0.262 secs
+ [>] 712 sequences with 6 distinct states
+ [>] checking 'sm' (size and triangle inequality)
+ [>] 557 distinct  spell sequences 
+ [>] min/max spell sequence lengths: 1/11
+ [>] computing distances using the OMspell metric
+ [>] elapsed time: 0.266 secs
+ [>] 712 sequences with 6 distinct states
+ [>] checking 'sm' (size and triangle inequality)
+ [>] 557 distinct  spell sequences 
+ [>] min/max spell sequence lengths: 1/11
+ [>] computing distances using the OMspell metric
+ [>] elapsed time: 0.265 secs
+ [>] 712 sequences with 6 distinct states
+ [>] checking 'sm' (size and triangle inequality)
+ [>] 557 distinct  spell sequences 
+ [>] min/max spell sequence lengths: 1/11
+ [>] computing distances using the OMspell metric
+ [>] elapsed time: 0.265 secs
+ [>] creating 6x6 substitution-cost matrix using 2 as constant value
+ [>] 712 sequences with 6 distinct states
+ [>] checking 'sm' (size and triangle inequality)
+ [>] 557 distinct  spell sequences 
+ [>] min/max spell sequence lengths: 1/11
+ [>] computing distances using the OMspell metric
+ [>] elapsed time: 0.265 secs
+ [>] 712 sequences with 6 distinct states
+ [>] checking 'sm' (size and triangle inequality)
+ [>] 557 distinct  spell sequences 
+ [>] min/max spell sequence lengths: 1/11
+ [>] computing distances using the OMspell metric
+ [>] elapsed time: 0.27 secs
+ [>] creating substitution-cost matrix using transition rates ...
+ [>] computing transition probabilities for states Employement/Further Educ/High Educ/Joblessness/School/Training ...
+ [>] 712 sequences with 6 distinct states
+ [>] checking 'sm' (size and triangle inequality)
+ [>] 557 distinct  spell sequences 
+ [>] min/max spell sequence lengths: 1/11
+ [>] computing distances using the OMspell metric
+ [>] elapsed time: 0.27 secs
+ [>] creating 6x6 substitution-cost matrix using 2 as constant value
+ [>] 712 sequences with 6 distinct states
+ [>] checking 'sm' (size and triangle inequality)
+ [>] 557 distinct  spell sequences 
+ [>] min/max spell sequence lengths: 1/11
+ [>] computing distances using the OMspell metric
+ [>] elapsed time: 0.405 secs
+ [>] 712 sequences with 6 distinct states
+ [>] checking 'sm' (size and triangle inequality)
+ [>] 557 distinct  spell sequences 
+ [>] min/max spell sequence lengths: 1/11
+ [>] computing distances using the OMspell metric
+ [>] elapsed time: 0.263 secs
+ [>] creating 6x6 substitution-cost matrix using 2 as constant value
+ [>] 712 sequences with 6 distinct states
+ [>] checking 'sm' (size and triangle inequality)
+ [>] 557 distinct  spell sequences 
+ [>] min/max spell sequence lengths: 1/11
+ [>] computing distances using the OMspell metric
+ [>] elapsed time: 0.259 secs
+ [>] 712 sequences with 6 distinct states
+ [>] checking 'sm' (size and triangle inequality)
+ [>] 557 distinct  spell sequences 
+ [>] min/max spell sequence lengths: 1/11
+ [>] computing distances using the OMspell metric
+ [>] elapsed time: 0.257 secs
+ [>] creating substitution-cost matrix using common future...
+ [>] computing transition probabilities for states Employement/Further Educ/High Educ/Joblessness/School/Training ...
+ [>] 712 sequences with 6 distinct states
+ [>] checking 'sm' (size and triangle inequality)
+ [>] 557 distinct  spell sequences 
+ [>] min/max spell sequence lengths: 1/11
+ [>] computing distances using the OMspell metric
+ [>] elapsed time: 0.26 secs
+ [>] creating 6x6 substitution-cost matrix using 2 as constant value
+ [>] 712 sequences with 6 distinct states
+ [>] checking 'sm' (size and triangle inequality)
+ [>] 557 distinct  spell sequences 
+ [>] min/max spell sequence lengths: 1/11
+ [>] computing distances using the OMspell metric
+ [>] elapsed time: 0.255 secs
+ [>] creating 6x6 substitution-cost matrix using 2 as constant value
+ [>] 712 sequences with 6 distinct states
+ [>] checking 'sm' (size and triangle inequality)
+ [>] 557 distinct  spell sequences 
+ [>] min/max spell sequence lengths: 1/11
+ [>] computing distances using the OMspell metric
+ [>] elapsed time: 0.263 secs
+ [>] 712 sequences with 6 distinct states
+ [>] creating a neutral 'prox' (identity matrix)
+ [>] 557 distinct  spell sequences 
+ [>] min/max spell sequence lengths: 1/11
+ [>] computing distances using the SVRspell metric
+ [>] elapsed time: 0.29 secs
+ [>] 712 sequences with 6 distinct states
+ [>] creating a neutral 'prox' (identity matrix)
+ [>] 557 distinct  spell sequences 
+ [>] min/max spell sequence lengths: 1/11
+ [>] computing distances using the SVRspell metric
+ [>] elapsed time: 0.286 secs
+ [>] 712 sequences with 6 distinct states
+ [>] creating a neutral 'prox' (identity matrix)
+ [>] 557 distinct  spell sequences 
+ [>] min/max spell sequence lengths: 1/11
+ [>] computing distances using the SVRspell metric
+ [>] elapsed time: 0.286 secs
+ [>] 712 sequences with 6 distinct states
+ [>] creating a neutral 'prox' (identity matrix)
+ [>] 557 distinct  spell sequences 
+ [>] min/max spell sequence lengths: 1/11
+ [>] computing distances using the SVRspell metric
+ [>] elapsed time: 0.285 secs
+ [>] 712 sequences with 6 distinct states
+ [>] creating a neutral 'prox' (identity matrix)
+ [>] 557 distinct  spell sequences 
+ [>] min/max spell sequence lengths: 1/11
+ [>] computing distances using the SVRspell metric
+ [>] elapsed time: 0.301 secs
+ [>] 712 sequences with 6 distinct states
+ [>] creating a neutral 'prox' (identity matrix)
+ [>] 557 distinct  spell sequences 
+ [>] min/max spell sequence lengths: 1/11
+ [>] computing distances using the SVRspell metric
+ [>] elapsed time: 0.306 secs
+ [>] 712 sequences with 6 distinct states
+ [>] creating a neutral 'prox' (identity matrix)
+ [>] 557 distinct  spell sequences 
+ [>] min/max spell sequence lengths: 1/11
+ [>] computing distances using the SVRspell metric
+ [>] elapsed time: 0.3 secs
+ [>] 712 sequences with 6 distinct states
+ [>] creating a neutral 'prox' (identity matrix)
+ [>] 557 distinct  spell sequences 
+ [>] min/max spell sequence lengths: 1/11
+ [>] computing distances using the SVRspell metric
+ [>] elapsed time: 0.3 secs
+ [>] 712 sequences with 6 distinct states
+ [>] creating a neutral 'prox' (identity matrix)
+ [>] 557 distinct  spell sequences 
+ [>] min/max spell sequence lengths: 1/11
+ [>] computing distances using the SVRspell metric
+ [>] elapsed time: 0.292 secs
+ [>] 712 sequences with 6 distinct states
+ [>] creating a neutral 'prox' (identity matrix)
+ [>] 557 distinct  spell sequences 
+ [>] min/max spell sequence lengths: 1/11
+ [>] computing distances using the SVRspell metric
+ [>] elapsed time: 0.29 secs
+ [>] 712 sequences with 6 distinct states
+ [>] creating a neutral 'prox' (identity matrix)
+ [>] 557 distinct  spell sequences 
+ [>] min/max spell sequence lengths: 1/11
+ [>] computing distances using the SVRspell metric
+ [>] elapsed time: 0.287 secs
+ [>] 712 sequences with 6 distinct states
+ [>] creating a neutral 'prox' (identity matrix)
+ [>] 557 distinct  spell sequences 
+ [>] min/max spell sequence lengths: 1/11
+ [>] computing distances using the SVRspell metric
+ [>] elapsed time: 0.284 secs
+ [>] 712 sequences with 6 distinct states
+ [>] creating a neutral 'prox' (identity matrix)
+ [>] 557 distinct  spell sequences 
+ [>] min/max spell sequence lengths: 1/11
+ [>] computing distances using the SVRspell metric
+ [>] elapsed time: 0.283 secs
+ [>] 712 sequences with 6 distinct states
+ [>] creating a neutral 'prox' (identity matrix)
+ [>] 557 distinct  spell sequences 
+ [>] min/max spell sequence lengths: 1/11
+ [>] computing distances using the SVRspell metric
+ [>] elapsed time: 0.283 secs
+ [>] 712 sequences with 6 distinct states
+ [>] creating a neutral 'prox' (identity matrix)
+ [>] 557 distinct  spell sequences 
+ [>] min/max spell sequence lengths: 1/11
+ [>] computing distances using the SVRspell metric
+ [>] elapsed time: 0.283 secs
+ [>] 712 sequences with 6 distinct states
+ [>] creating a neutral 'prox' (identity matrix)
+ [>] 557 distinct  spell sequences 
+ [>] min/max spell sequence lengths: 1/11
+ [>] computing distances using the SVRspell metric
+ [>] elapsed time: 0.285 secs
+ [>] 712 sequences with 6 distinct states
+ [>] creating a neutral 'prox' (identity matrix)
+ [>] 557 distinct  spell sequences 
+ [>] min/max spell sequence lengths: 1/11
+ [>] computing distances using the SVRspell metric
+ [>] elapsed time: 0.292 secs
+ [>] 712 sequences with 6 distinct states
+ [>] creating a neutral 'prox' (identity matrix)
+ [>] 557 distinct  spell sequences 
+ [>] min/max spell sequence lengths: 1/11
+ [>] computing distances using the SVRspell metric
+ [>] elapsed time: 0.288 secs
+ [>] 712 sequences with 6 distinct states
+ [>] creating a neutral 'prox' (identity matrix)
+ [>] 557 distinct  spell sequences 
+ [>] min/max spell sequence lengths: 1/11
+ [>] computing distances using the SVRspell metric
+ [>] elapsed time: 0.287 secs
+ [>] 712 sequences with 6 distinct states
+ [>] creating a neutral 'prox' (identity matrix)
+ [>] 557 distinct  spell sequences 
+ [>] min/max spell sequence lengths: 1/11
+ [>] computing distances using the SVRspell metric
+ [>] elapsed time: 0.285 secs
+ [>] 712 sequences with 6 distinct states
+ [>] creating a neutral 'prox' (identity matrix)
+ [>] 557 distinct  spell sequences 
+ [>] min/max spell sequence lengths: 1/11
+ [>] computing distances using the SVRspell metric
+ [>] elapsed time: 0.286 secs
+ [>] 712 sequences with 6 distinct states
+ [>] creating a neutral 'prox' (identity matrix)
+ [>] 557 distinct  spell sequences 
+ [>] min/max spell sequence lengths: 1/11
+ [>] computing distances using the SVRspell metric
+ [>] elapsed time: 0.286 secs
+ [>] 712 sequences with 6 distinct states
+ [>] creating a neutral 'prox' (identity matrix)
+ [>] 557 distinct  spell sequences 
+ [>] min/max spell sequence lengths: 1/11
+ [>] computing distances using the SVRspell metric
+ [>] elapsed time: 0.283 secs
+ [>] 712 sequences with 6 distinct states
+ [>] creating a neutral 'prox' (identity matrix)
+ [>] 557 distinct  spell sequences 
+ [>] min/max spell sequence lengths: 1/11
+ [>] computing distances using the SVRspell metric
+ [>] elapsed time: 0.283 secs
+ [>] 712 sequences with 6 distinct states
+ [>] creating 6x6 substitution-cost matrix using 2 as constant value
+ [>] checking 'sm' (size and triangle inequality)
+ [>] 557 distinct  sequences 
+ [>] min/max sequence lengths: 72/72
+ [>] computing distances using the OMstran metric
+ [>] Creating 34 distinct transition states
+ [>] elapsed time: 5.64 secs

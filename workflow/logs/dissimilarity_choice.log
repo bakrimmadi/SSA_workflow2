@@ -1,0 +1,18 @@
+
+Attachement du package : ‘dplyr’
+
+Les objets suivants sont masqués depuis ‘package:stats’:
+
+    filter, lag
+
+Les objets suivants sont masqués depuis ‘package:base’:
+
+    intersect, setdiff, setequal, union
+
+Message d'avis :
+le package ‘dplyr’ a été compilé avec la version R 4.4.1 
+Message d'avis :
+le package ‘stringr’ a été compilé avec la version R 4.4.1 
+Message d'avis :
+le package ‘tidyr’ a été compilé avec la version R 4.4.1 
+Valeurs du vecteur de dissimilarité : OMstran OMspell SVRspell 

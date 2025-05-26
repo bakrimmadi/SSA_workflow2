@@ -1,0 +1,73 @@
+Le chargement a nécessité le package : data.table
+Message d'avis :
+le package ‘data.table’ a été compilé avec la version R 4.4.2 
+
+Attachement du package : ‘dplyr’
+
+Les objets suivants sont masqués depuis ‘package:data.table’:
+
+    between, first, last
+
+Les objets suivants sont masqués depuis ‘package:stats’:
+
+    filter, lag
+
+Les objets suivants sont masqués depuis ‘package:base’:
+
+    intersect, setdiff, setequal, union
+
+Message d'avis :
+le package ‘dplyr’ a été compilé avec la version R 4.4.1 
+Message d'avis :
+le package ‘tidyr’ a été compilé avec la version R 4.4.1 
+Message d'avis :
+le package ‘readr’ a été compilé avec la version R 4.4.1 
+Message d'avis :
+le package ‘stringr’ a été compilé avec la version R 4.4.1 
+Message d'avis :
+le package ‘readxl’ a été compilé avec la version R 4.4.1 
+
+TraMineR stable version 2.2-11 (Built: 2024-12-10)
+Website: http://traminer.unige.ch
+Please type 'citation("TraMineR")' for citation information.
+
+Message d'avis :
+le package ‘TraMineR’ a été compilé avec la version R 4.4.2 
+Rows: 8168 Columns: 3
+── Column specification ─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+Delimiter: ";"
+chr (2): Id, Gaz
+dbl (1): Delai
+
+ℹ Use `spec()` to retrieve the full column specification for this data.
+ℹ Specify the column types or set `show_col_types = FALSE` to quiet this message.
+Messages d'avis :
+1: Using an external vector in selections was deprecated in tidyselect 1.1.0.
+ℹ Please use `all_of()` or `any_of()` instead.
+  # Was:
+  data %>% select(var_id)
+
+  # Now:
+  data %>% select(all_of(var_id))
+
+See <https://tidyselect.r-lib.org/reference/faq-external-vector.html>. 
+2: Using an external vector in selections was deprecated in tidyselect 1.1.0.
+ℹ Please use `all_of()` or `any_of()` instead.
+  # Was:
+  data %>% select(var_rep)
+
+  # Now:
+  data %>% select(all_of(var_rep))
+
+See <https://tidyselect.r-lib.org/reference/faq-external-vector.html>. 
+ [>] found missing values ('NA') in sequence data
+ [>] preparing 326 sequences
+ [>] coding void elements with '%' and missing values with '*'
+ [>] state coding:
+       [alphabet]   [label]      [long label] 
+     1  AIR          AIR          AIR
+     2  NOXBouteille NOXBouteille NOXBouteille
+     3  NOXCRABE     NOXCRABE     NOXCRABE
+     4  Oxygen       Oxygen       Oxygen
+ [>] 326 sequences in the data set
+ [>] min/max sequence length: 1/44

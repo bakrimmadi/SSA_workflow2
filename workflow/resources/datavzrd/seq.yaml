@@ -1,0 +1,235 @@
+__use_yte__: true
+datasets:
+  seq:
+    path: ?input.table
+    separator: ;
+views:
+  seq:
+    dataset: seq
+    render-table:
+      columns:
+        Time1:
+          plot:
+            heatmap:
+              scale: ordinal
+              color-scheme: category10
+        Time2:
+          plot:
+            heatmap:
+              scale: ordinal
+              color-scheme: category10
+        Time3:
+          plot:
+            heatmap:
+              scale: ordinal
+              color-scheme: category10
+        Time4:
+          plot:
+            heatmap:
+              scale: ordinal
+              color-scheme: category10
+        Time5:
+          plot:
+            heatmap:
+              scale: ordinal
+              color-scheme: category10
+        Time6:
+          plot:
+            heatmap:
+              scale: ordinal
+              color-scheme: category10
+        Time7:
+          plot:
+            heatmap:
+              scale: ordinal
+              color-scheme: category10
+        Time8:
+          plot:
+            heatmap:
+              scale: ordinal
+              color-scheme: category10
+        Time9:
+          plot:
+            heatmap:
+              scale: ordinal
+              color-scheme: category10
+        Time10:
+          plot:
+            heatmap:
+              scale: ordinal
+              color-scheme: category10
+        Time11:
+          plot:
+            heatmap:
+              scale: ordinal
+              color-scheme: category10
+        Time12:
+          plot:
+            heatmap:
+              scale: ordinal
+              color-scheme: category10
+        Time13:
+          plot:
+            heatmap:
+              scale: ordinal
+              color-scheme: category10
+        Time14:
+          plot:
+            heatmap:
+              scale: ordinal
+              color-scheme: category10
+        Time15:
+          plot:
+            heatmap:
+              scale: ordinal
+              color-scheme: category10
+        Time16:
+          plot:
+            heatmap:
+              scale: ordinal
+              color-scheme: category10
+        Time17:
+          plot:
+            heatmap:
+              scale: ordinal
+              color-scheme: category10
+        Time18:
+          plot:
+            heatmap:
+              scale: ordinal
+              color-scheme: category10
+        Time19:
+          plot:
+            heatmap:
+              scale: ordinal
+              color-scheme: category10
+        Time20:
+          plot:
+            heatmap:
+              scale: ordinal
+              color-scheme: category10
+        Time21:
+          plot:
+            heatmap:
+              scale: ordinal
+              color-scheme: category10
+        Time22:
+          plot:
+            heatmap:
+              scale: ordinal
+              color-scheme: category10
+        Time23:
+          plot:
+            heatmap:
+              scale: ordinal
+              color-scheme: category10
+        Time24:
+          plot:
+            heatmap:
+              scale: ordinal
+              color-scheme: category10
+        Time25:
+          plot:
+            heatmap:
+              scale: ordinal
+              color-scheme: category10
+        Time26:
+          plot:
+            heatmap:
+              scale: ordinal
+              color-scheme: category10
+        Time27:
+          plot:
+            heatmap:
+              scale: ordinal
+              color-scheme: category10
+        Time28:
+          plot:
+            heatmap:
+              scale: ordinal
+              color-scheme: category10
+        Time29:
+          plot:
+            heatmap:
+              scale: ordinal
+              color-scheme: category10
+        Time30:
+          plot:
+            heatmap:
+              scale: ordinal
+              color-scheme: category10
+        Time31:
+          plot:
+            heatmap:
+              scale: ordinal
+              color-scheme: category10
+        Time32:
+          plot:
+            heatmap:
+              scale: ordinal
+              color-scheme: category10
+        Time33:
+          plot:
+            heatmap:
+              scale: ordinal
+              color-scheme: category10
+        Time34:
+          plot:
+            heatmap:
+              scale: ordinal
+              color-scheme: category10
+        Time35:
+          plot:
+            heatmap:
+              scale: ordinal
+              color-scheme: category10
+        Time36:
+          plot:
+            heatmap:
+              scale: ordinal
+              color-scheme: category10
+        Time37:
+          plot:
+            heatmap:
+              scale: ordinal
+              color-scheme: category10
+        Time38:
+          plot:
+            heatmap:
+              scale: ordinal
+              color-scheme: category10
+        Time39:
+          plot:
+            heatmap:
+              scale: ordinal
+              color-scheme: category10
+        Time40:
+          plot:
+            heatmap:
+              scale: ordinal
+              color-scheme: category10
+        Time41:
+          plot:
+            heatmap:
+              scale: ordinal
+              color-scheme: category10
+        Time42:
+          plot:
+            heatmap:
+              scale: ordinal
+              color-scheme: category10
+        Time43:
+          plot:
+            heatmap:
+              scale: ordinal
+              color-scheme: category10
+        Time44:
+          plot:
+            heatmap:
+              scale: ordinal
+              color-scheme: category10
+        Cluster:
+          plot:
+            heatmap:
+              scale: ordinal
+              color-scheme: category10
