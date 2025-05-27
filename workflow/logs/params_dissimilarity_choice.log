@@ -15,10 +15,7 @@ Message d'avis :
 le package ‘stringr’ a été compilé avec la version R 4.4.1 
 Message d'avis :
 le package ‘tidyr’ a été compilé avec la version R 4.4.1 
-Valeurs par defaut pour les arguments de OMstran : seqsubm = c(0, 4) transindel = c(0, 2) otto = c(1e-04, 1) 
-Valeurs par defaut pour les arguments de OMspell : seqsubm = c(0, 4) expcost = c(0, 3) 
-Valeurs par defaut pour les arguments de SVRspell : a = c(0, 3) b = c(0, 3) tpow = c(0, 3) 
-Utilisation des paramètres :
+Paramètres par défaut pour un profil non expert :
 LCS :  
 CHI2 :  
 EUCLID :  

@@ -1,20 +1,23 @@
 # chemin_bdd : Chemin du fichier avec le nom de la base de données et son extension
-samples: "resources/data/20240312 Tab_Univ_complete_finale.csv"
+samples: "resources/data/Tab_suivi_mvad.csv"
 # bdd_format : Format de la bdd (Long ou wide)    
-bdd_format: "Long"
+bdd_format: "Wide"
 # var_id : nom de la variable 
-var_id: "Id"
+var_id: "id"
 # var_rep : nom(s) de la ou des variables réponses
-var_rep: "Gaz"
-# labels : vecteur contenant les labels des modalités de la variables réponses
-labels: "AIR, NOXBouteille, NOXCRABE, Oxygen"
+var_rep: "jul_93, aug_93, sep_93, oct_93, nov_93, dec_93, jan_94, feb_94, mar_94, apr_94, may_94, jun_94, jul_94, aug_94, sep_94, oct_94, nov_94, dec_94, jan_95, feb_95, mar_95, apr_95, may_95, jun_95, jul_95, aug_95, sep_95, oct_95, nov_95, dec_95, jan_96, feb_96, mar_96, apr_96, may_96, jun_96, jul_96, aug_96, sep_96, oct_96, nov_96, dec_96, jan_97, feb_97, mar_97, apr_97, may_97, jun_97, jul_97, aug_97, sep_97, oct_97, nov_97, dec_97, jan_98, feb_98, mar_98, apr_98, may_98, jun_98, jul_98, aug_98, sep_98, oct_98, nov_98, dec_98, jan_99, feb_99, mar_99, apr_99, may_99, jun_99"
+# labels : vecteur contenant les labels des modalités de la variable réponse dans l'ordre alphabétique
+labels: "Employement, Further Educ, High Educ, Joblessness, School, Training"
 # path_result : chemin indiquant où exporter les résultats
 path_result: "results/plots"
+# min_cluster_size : Effectif minimum attendu dans chaque cluster (NULL ou valeur numérique)
+min_cluster_size: NULL
 # expert : Profil expert (1 : Oui 0: Non)
-expert: 1
+expert: 0
+#### A ne remplir que pour les profils experts ####
 # dissimilarite_expert : Vecteur de dissimilarité saisi par l'expert ex : "OM, OMspell, LCS"
 dissimilarite_expert: ""
-# fusion_dissimilarites : Fusion des dissimilarités issus des critères et les dissimilarités renseignés par l'utilisateur
+# fusion_dissimilarites : Fusion des dissimilarités issus des critères et les dissimilarités renseignés par l'utilisateur (1 : Oui 0: Non)
 fusion_dissimilarites: 0
 # choix_criteres : Choix des critères 
 choix_criteres: 

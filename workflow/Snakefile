@@ -15,6 +15,7 @@ rule all:
         os.path.join(config["path_result"], "seqmtplot.png"),
         os.path.join(config["path_result"], "seqrplot.png"),
         os.path.join(config["path_result"], "seqHtplot.png"),
+        os.path.join(config["path_result"], "table_plot.png"),
         "resources/datavzrd/seq.yaml",
         "results/tables/seq"
 

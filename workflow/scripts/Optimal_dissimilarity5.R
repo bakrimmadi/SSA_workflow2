@@ -42,7 +42,8 @@ library(seqhandbook)
 #####                     Paramètres                       #####
 optimal_dissimilarity <- function(bdd,
                                   dissimilarite,
-                                  bounds) {
+                                  bounds,
+                                  min_cluster_size = NULL) {
   if (all(
     dissimilarite %in% c(
       "LCS",
@@ -176,32 +177,24 @@ scoringFunction <-
     #Hierarchical clustering
     seq.dist_diss <- hclust(as.dist(seq.diss), method = "ward.D2")
     #Dynamic cut tree
-    # if (nrow(bdd) <= 100){
-    #   min_size <- 10}
-    # if (nrow(seq) > 100){
-    #   min_size <- ceiling(nrow(seq)*0.05)}
-    # seq.part_dynamic <-
-    #   cutreeDynamic(seq.dist_diss, distM = seq.diss, minClusterSize = min_size)
-    # seq.part_dynamic <-
-    #   factor(seq.part_dynamic, labels = paste("classe", 1:nlevels(factor(seq.part_dynamic)), sep = "."))
-    if (nrow(bdd) < 100) {
-      seq.part_dynamic_base <-data.frame(Cluster =cutreeDynamic(seq.dist_diss, 
-                                                                distM = seq.diss, 
-                                                                minClusterSize = 10,
-                                                                respectSmallClusters=TRUE))
+    # Appliquer les règles si min_cluster_size est non spécifié
+    if (is.null(min_cluster_size)) {
+      n <- nrow(bdd)
+      min_cluster_size <- dplyr::case_when(
+        n < 100    ~ 10,
+        n < 1000   ~ 30,
+        TRUE       ~ 100
+      )
     }
-    if (nrow(bdd) >= 100 & nrow(bdd) < 1000) {
-      seq.part_dynamic_base <-data.frame(Cluster =cutreeDynamic(seq.dist_diss, 
-                                                                distM = seq.diss, 
-                                                                minClusterSize = 30,
-                                                                respectSmallClusters=TRUE))
-    }
-    if (nrow(bdd) >= 1000) {
-      seq.part_dynamic_base <-data.frame(Cluster =cutreeDynamic(seq.dist_diss, 
-                                                                distM = seq.diss, 
-                                                                minClusterSize = 100,
-                                                                respectSmallClusters=TRUE))
-    }
+    # Clustering dynamique
+    seq.part_dynamic_base <- data.frame(
+      Cluster = cutreeDynamic(
+        seq.dist_diss,
+        distM = seq.diss,
+        minClusterSize = min_cluster_size,
+        respectSmallClusters = TRUE
+      )
+    )
     ###Reclassement des valeurs qui n'ont pas réussi à être assignés à un cluster
     #ASW par cluster
     clustqual_base <- wcClusterQuality(seq.diss, seq.part_dynamic_base$Cluster)
@@ -253,22 +246,26 @@ scoringFunction <-
     #pamward_diss <- wcKMedoids(seq.diss, k = nlevels(seq.part_dynamic), initialclust = seq.dist_diss)
     if (nlevels(seq.part_dynamic) == 1) {
       clustqual <-list(stats=c("ASW"=0,"HC"=0,"ASWw"=0,"HG"=0,"CH"=0))
+      Score_euclid = 1
     }
     else{
       #Qualité du clustering : ASW
       clustqual <- wcClusterQuality(seq.diss, seq.part_dynamic)
+      Score_euclid = max(sqrt(
+        clustqual$stats["ASW"]^2 + mean(cboot.hclust$bootmean)^2 + (1 - clustqual$stats["HC"])^2))
+    }
+    Score_old = max(2 * clustqual$stats["ASW"] + mean(cboot.hclust$bootmean) - clustqual$stats["HC"])
+    if ("Classe 0" %in% seq.part_dynamic_NR){
+      Score_euclid = Score_euclid-0.5
+      Score_old = Score_old-0.5
     }
     return(
       list(
         # Score = max(pamward_diss$stats["ASW"]-pamward_diss$stats["HC"]),
         # Score_ASW = max(pamward_diss$stats["ASW"]),
         # Score_HC = max(pamward_diss$stats["HC"])
-        Score_old = max(
-          2 * clustqual$stats["ASW"] + mean(cboot.hclust$bootmean) - clustqual$stats["HC"]
-        ),
-        Score = max(sqrt(
-          clustqual$stats["ASW"]^2 + mean(cboot.hclust$bootmean)^2 + (1 - clustqual$stats["HC"])^2
-        )),
+        Score_old = Score_old,
+        Score = Score_euclid,
         Score_ASW = max(clustqual$stats["ASW"]),
         Score_HC = max(clustqual$stats["HC"]),
         Score_bootmean = mean(cboot.hclust$bootmean),
@@ -313,12 +310,22 @@ for (diss in dissimilarite) {
     ))
     optObj <- get(paste0("optObj_", diss))
     scoreSummary <- optObj[["scoreSummary"]]
-    assign(
-      paste0("best_param_", diss),
-      getBestPars(optObj) %>%
+    
+    # Vérification de la variance de Score
+    if (!"Score" %in% names(scoreSummary)) {
+      stop("Colonne 'Score' manquante dans scoreSummary.")
+    }
+    
+    if (var(scoreSummary$Score) == 0) {
+      warning("Score constant : pas de variance. Jointure avec scoreSummary désactivée.")
+      best_param <- getBestPars(optObj) %>%
         as.data.frame() %>%
-        dplyr::mutate(dissimilarite = diss) %>%
-        dplyr::inner_join(scoreSummary) %>%
+        dplyr::mutate(dissimilarite = diss,min_cluster_size_used = min_cluster_size)
+    } else {
+      best_param <- getBestPars(optObj) %>%
+        as.data.frame() %>%
+        dplyr::mutate(dissimilarite = diss,min_cluster_size_used = min_cluster_size) %>%
+        dplyr::inner_join(scoreSummary, by = intersect(names(.), names(scoreSummary))) %>%
         dplyr::select(
           -gpUtility,
           -acqOptimum,
@@ -326,7 +333,9 @@ for (diss in dissimilarite) {
           -Elapsed,
           -errorMessage
         )
-    )
+    }
+    
+    assign(paste0("best_param_", diss), best_param)
     
   }
 }
@@ -424,7 +433,8 @@ bounds <- readRDS(snakemake@input[[3]])
 #### Choix de la meilleure dissimilarité ####
 optimal_test <- optimal_dissimilarity(seq,
                                       dissimilarite = dissimilarite,
-                                      bounds = bounds)
+                                      bounds = bounds,
+                                      min_cluster_size = snakemake@params[["min_cluster_size"]])
 # Write matrix object as RDS
 saveRDS(optimal_test$seq_diss_best, file = snakemake@output[[1]])
 #Export du vecteur de la meilleure dissimilarité avec ses paramètres

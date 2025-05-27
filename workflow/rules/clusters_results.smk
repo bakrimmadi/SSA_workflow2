@@ -6,6 +6,7 @@ rule results_dissimilarity:
         "resources/data/matrix_diss_best.rds",
         "resources/data/best_param_diss.csv"
     output:
+        "resources/data/seq.csv",
         report(
             "results/plots/seqfplot_top10.png",
             category="Plots",
@@ -54,8 +55,16 @@ rule results_dissimilarity:
             labels={"plot": "Htplot", "approach": "seqHtplot"},
             caption="../report/seqHtplot.rst",
         ),
+        report(
+            "results/plots/table_plot.png",
+            category="Plots",
+            labels={"plot": "table_plot", "approach": "tableGrob"},
+            caption="../report/table_plot.rst",
+        ),
     log:
         "logs/results_dissimilarity.log"
+    params:
+        path_result = config["path_result"]
     conda:
         "../envs/results_dissimilarity.yaml"
     script:

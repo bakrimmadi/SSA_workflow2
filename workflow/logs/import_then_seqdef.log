@@ -1,6 +1,48 @@
+installation des dépendances ‘fstcore’, ‘Rcpp’, ‘Formula’, ‘stringmagic’, ‘fst’, ‘dreamerr’
+
+essai de l'URL 'http://cran.univ-lyon1.fr/src/contrib/fstcore_0.10.0.tar.gz'
+Content type 'application/x-gzip' length 643350 bytes (628 KB)
+==================================================
+downloaded 628 KB
+
+essai de l'URL 'http://cran.univ-lyon1.fr/src/contrib/Rcpp_1.0.14.tar.gz'
+Content type 'application/x-gzip' length 3013288 bytes (2.9 MB)
+==================================================
+downloaded 2.9 MB
+
+essai de l'URL 'http://cran.univ-lyon1.fr/src/contrib/Formula_1.2-5.tar.gz'
+Content type 'application/x-gzip' length 128259 bytes (125 KB)
+==================================================
+downloaded 125 KB
+
+essai de l'URL 'http://cran.univ-lyon1.fr/src/contrib/stringmagic_1.2.0.tar.gz'
+Content type 'application/x-gzip' length 3362930 bytes (3.2 MB)
+==================================================
+downloaded 3.2 MB
+
+essai de l'URL 'http://cran.univ-lyon1.fr/src/contrib/fst_0.9.8.tar.gz'
+Content type 'application/x-gzip' length 274495 bytes (268 KB)
+==================================================
+downloaded 268 KB
+
+essai de l'URL 'http://cran.univ-lyon1.fr/src/contrib/dreamerr_1.5.0.tar.gz'
+Content type 'application/x-gzip' length 1130028 bytes (1.1 MB)
+==================================================
+downloaded 1.1 MB
+
+essai de l'URL 'http://cran.univ-lyon1.fr/src/contrib/hdd_0.1.1.tar.gz'
+Content type 'application/x-gzip' length 327937 bytes (320 KB)
+==================================================
+downloaded 320 KB
+
+
+Les packages source téléchargés sont dans
+	‘/tmp/RtmpPzi7M4/downloaded_packages’
+Mise à jour de la liste HTML des packages dans '.Library'
+Making 'packages.html' ... terminé
 Le chargement a nécessité le package : data.table
 Message d'avis :
-le package ‘data.table’ a été compilé avec la version R 4.4.2 
+le package ‘data.table’ a été compilé avec la version R 4.4.3 
 
 Attachement du package : ‘dplyr’
 
@@ -33,11 +75,11 @@ Please type 'citation("TraMineR")' for citation information.
 
 Message d'avis :
 le package ‘TraMineR’ a été compilé avec la version R 4.4.2 
-Rows: 8168 Columns: 3
+Rows: 712 Columns: 86
 ── Column specification ─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
 Delimiter: ";"
-chr (2): Id, Gaz
-dbl (1): Delai
+chr (85): weight, male, catholic, belfast, n_eastern, southern, s_eastern, w...
+dbl  (1): id
 
 ℹ Use `spec()` to retrieve the full column specification for this data.
 ℹ Specify the column types or set `show_col_types = FALSE` to quiet this message.
@@ -60,14 +102,13 @@ See <https://tidyselect.r-lib.org/reference/faq-external-vector.html>.
   data %>% select(all_of(var_rep))
 
 See <https://tidyselect.r-lib.org/reference/faq-external-vector.html>. 
- [>] found missing values ('NA') in sequence data
- [>] preparing 326 sequences
- [>] coding void elements with '%' and missing values with '*'
  [>] state coding:
-       [alphabet]   [label]      [long label] 
-     1  AIR          AIR          AIR
-     2  NOXBouteille NOXBouteille NOXBouteille
-     3  NOXCRABE     NOXCRABE     NOXCRABE
-     4  Oxygen       Oxygen       Oxygen
- [>] 326 sequences in the data set
- [>] min/max sequence length: 1/44
+       [alphabet]  [label]      [long label] 
+     1  employment  Employement  Employement
+     2  FE          Further Educ Further Educ
+     3  HE          High Educ    High Educ
+     4  joblessness Joblessness  Joblessness
+     5  school      School       School
+     6  training    Training     Training
+ [>] 712 sequences in the data set
+ [>] min/max sequence length: 72/72

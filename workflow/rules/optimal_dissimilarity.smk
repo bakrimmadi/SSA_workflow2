@@ -9,6 +9,8 @@ rule Optimal_dissimilarity5:
         "resources/data/best_param_diss.csv"
     log:
         "logs/optimal_dissimilarity.log"
+    params:
+        min_cluster_size = config["min_cluster_size"]
     conda:
         "../envs/optimal_dissimilarity.yaml"
     script:

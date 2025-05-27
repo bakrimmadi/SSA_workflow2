@@ -11,3 +11,5 @@ dependencies:
   - r-weightedcluster =1.6.4
   - r-writexl =1.5.0
   - r-janitor =2.2.0
+  - r-ggplot2 =3.5.1
+  - r-gridextra =2.3

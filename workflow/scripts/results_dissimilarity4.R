@@ -42,6 +42,8 @@ library(writexl)
 library(seqhandbook)
 library(WeightedCluster)
 library(janitor)
+library(ggplot2)
+library(gridExtra)
 #####                     Paramètres                       #####
 results_dissimilarity <- function(bdd,
                                   matrice_seqdist = NULL,
@@ -56,34 +58,27 @@ results_dissimilarity <- function(bdd,
     seq.dist_diss_best <-
       hclust(as.dist(matrice_seqdist[[i]]), method = "ward.D2")
     #Dynamic cut tree
-    # if (nrow(bdd) <= 100){
-    #   min_size <- 10}
-    # else {
-    #   min_size <- ceiling(nrow(bdd)*0.05)}
-    # seq.part_dynamic_diss_best <- cutreeDynamic(seq.dist_diss_best,
-    #                                             distM = matrice_seqdist[[i]],
-    #                                             minClusterSize = min_size)
-    # seq.part_dynamic_diss_best <- factor(seq.part_dynamic_diss_best,
-    #                                      labels = paste("classe", 1:nlevels(factor(seq.part_dynamic_diss_best)),
-    #                                                     sep = "."))
-    if (nrow(bdd) < 100) {
-      seq.part_dynamic_base <-data.frame(Cluster =cutreeDynamic(seq.dist_diss_best, 
-                                                                distM = matrice_seqdist[[i]], 
-                                                                minClusterSize = 10,
-                                                                respectSmallClusters=TRUE))
+    # Appliquer les règles si min_cluster_size est non spécifié
+    if (is.null(best_param_diss$min_cluster_size_used)) {
+      n <- nrow(bdd)
+      min_cluster_size <- dplyr::case_when(
+        n < 100    ~ 10,
+        n < 1000   ~ 30,
+        TRUE       ~ 100
+      )
     }
-    if (nrow(bdd) >= 100 & nrow(bdd) < 1000) {
-      seq.part_dynamic_base <-data.frame(Cluster =cutreeDynamic(seq.dist_diss_best, 
-                                                                distM = matrice_seqdist[[i]], 
-                                                                minClusterSize = 30,
-                                                                respectSmallClusters=TRUE))
+    else{
+      min_cluster_size <- best_param_diss$min_cluster_size_used
     }
-    if (nrow(bdd) >= 1000) {
-      seq.part_dynamic_base <-data.frame(Cluster =cutreeDynamic(seq.dist_diss_best, 
-                                                                distM = matrice_seqdist[[i]], 
-                                                                minClusterSize = 100,
-                                                                respectSmallClusters=TRUE))
-    }
+    # Clustering dynamique
+    seq.part_dynamic_base <- data.frame(
+      Cluster = cutreeDynamic(
+        seq.dist_diss_best,
+        distM = matrice_seqdist[[i]],
+        minClusterSize = min_cluster_size,
+        respectSmallClusters = TRUE
+      )
+    )
     
     ###Reclassement des valeurs qui n'ont pas réussi à être assignés à un cluster
     #ASW par cluster
@@ -111,26 +106,38 @@ results_dissimilarity <- function(bdd,
     seq.part_dynamic_diss_best <- factor(seq.part_dynamic0$Cluster_reclasse2) 
     #### Results to stock ####
     #Bdd with cluster variable
-    Bdd_cluster <- cbind(bdd, seq.part_dynamic_diss_best)
+    Bdd_cluster <- cbind(bdd, seq.part_dynamic_diss_best) %>%
+      dplyr::rename(cluster = seq.part_dynamic_diss_best)
     
     #Transition matrix
     seq.trate <- seqtrate(bdd) %>%
       data.frame() %>%
       rownames_to_column()
-    
+    # Calcul des fréquences et pourcentages
+    cluster_summary <- Bdd_cluster %>%
+      count(cluster, name = "freq") %>%
+      mutate(
+        percent = round(100 * freq / sum(freq), 1)
+      ) %>%
+      dplyr::arrange(desc(freq)) %>%
+      dplyr::mutate(
+        percent_cumsum = cumsum(percent)
+      )
     # Creating a folder to store results
     dir.create(path_result, showWarnings = FALSE)
     #Export of tables
     if (is.null(best_param_diss)) {
       list.xls <- list(bdd_cluster = Bdd_cluster,
-                       transition_matrix = seq.trate)
+                       transition_matrix = seq.trate,
+                       cluster_summary = cluster_summary)
     }
     else {
       list.xls <- list(
         bdd_cluster = Bdd_cluster,
         best_dissimilarity = best_param_diss[i,] %>%
           remove_empty("cols"),
-        transition_matrix = seq.trate
+        transition_matrix = seq.trate,
+        cluster_summary = cluster_summary
       )
     }
     ###### Export excel #####
@@ -138,12 +145,9 @@ results_dissimilarity <- function(bdd,
                path = paste0(path_result,"bdd_cluster_dissimilarity_", i, ".xlsx"))
     ###### Export plots ######
     
-    # Vérifier la condition pour les fichiers _NR
-    export_NR <- "Classe 0" %in% seq.part_dynamic_diss_best_NR
-    
     # 🔹 Définir les graphiques à exporter
     plots <- list(
-      "seqfplot_top10" = function() seqfplot(bdd, weighted = FALSE, border = NA, main = "Top 10 most frequent sequences",
+      "seqfplot_top10" = function() seqfplot(bdd, weighted = FALSE, border = NA,
                                              with.legend = "right", cex.legend = 0.8),
       
       "seq_heatmap" = function() seq_heatmap(bdd, seq.dist_diss_best),
@@ -158,25 +162,10 @@ results_dissimilarity <- function(bdd,
                                          with.legend = "right", cex.legend = 0.8),
       "seqrplot" = function() seqrplot(bdd, group = seq.part_dynamic_diss_best, dist.matrix = as.dist(matrice_seqdist[[i]]), criterion = "dist"),
       "seqHtplot" = function() seqHtplot(bdd, group = seq.part_dynamic_diss_best, weighted = FALSE, border = NA,
-                                         with.legend = "right", cex.legend = 0.8)
+                                         with.legend = "right", cex.legend = 0.8),
+      "table_plot" = function() {grid::grid.newpage()
+        grid::grid.draw(tableGrob(cluster_summary)) }# Affichage du tableau avec ggplot2
     )
-    
-    # 🔹 Ajouter les graphiques _NR si la condition est vérifiée
-    if (export_NR) {
-      plots <- c(plots, list(
-        "seqIplot_NR" = function() seqIplot(bdd, group = seq.part_dynamic_diss_best_NR, space = 0, border = NA, yaxis = FALSE, cex.legend = 0.8),
-        
-        "seqdplot_NR" = function() seqdplot(bdd, group = seq.part_dynamic_diss_best_NR, space = 0, border = NA, yaxis = FALSE, cex.legend = 0.8),
-        
-        "seqfplot_NR" = function() seqfplot(bdd, group = seq.part_dynamic_diss_best_NR, weighted = FALSE, border = NA, 
-                                            with.legend = "right", cex.legend = 0.8),
-        "seqmtplot_NR" = function() seqmtplot(bdd, group = seq.part_dynamic_diss_best_NR, weighted = FALSE, border = NA,
-                                              with.legend = "right", cex.legend = 0.8),
-        "seqrplot_NR" = function() seqrplot(bdd, group = seq.part_dynamic_diss_best_NR, dist.matrix = as.dist(matrice_seqdist[[i]]), criterion = "dist"),
-        "seqHtplot_NR" = function() seqHtplot(bdd, group = seq.part_dynamic_diss_best_NR, weighted = FALSE, border = NA,
-                                              with.legend = "right", cex.legend = 0.8)
-      ))
-    }
     
     # Boucle pour exporter des PDF avec différentes tailles de page
     tryCatch({
@@ -187,6 +176,7 @@ results_dissimilarity <- function(bdd,
         height = height
       )
       for (plot_name in names(plots)) {
+        # Nouvelle page pour chaque plot
         plots[[plot_name]]()  # 🔹 Exécuter la fonction graphique
         Sys.sleep(1)  # 🔹 Laisser le temps au rendu
       }
@@ -200,17 +190,44 @@ results_dissimilarity <- function(bdd,
         height = 20
       )    
       for (plot_name in names(plots)) {
+        # Nouvelle page pour chaque plot
         plots[[plot_name]]()  # 🔹 Exécuter la fonction graphique
         Sys.sleep(1)  # 🔹 Laisser le temps au rendu
       }
       
     })
     
-    # 🔹 Exportation des graphiques en PNG
+    # Optionnel : initialiser une liste pour logger les erreurs
+    error_log <- list()
+    
     for (plot_name in names(plots)) {
-      png(paste0(path_result, plot_name, ".png"), width = 700, height = 500, res = 100)
-      plots[[plot_name]]()  # Exécuter la fonction graphique
-      dev.off()  # Sauvegarder l'image
+      png(
+        filename = paste0(path_result, plot_name, ".png"),
+        width = 700, height = 500, res = 100
+      )
+      
+      success <- tryCatch({
+        plots[[plot_name]]()
+        TRUE
+      }, error = function(e) {
+        # Si erreur, tenter à nouveau avec des marges réduites
+        par(mar = c(4, 4, 2, 1))
+        tryCatch({
+          plots[[plot_name]]()
+          TRUE
+        }, error = function(e2) {
+          error_log[[plot_name]] <<- e2$message
+          FALSE
+        })
+      })
+      
+      dev.off()
+    }
+    
+    # Optionnel : afficher les erreurs
+    if (length(error_log) > 0) {
+      message("Plots échoués :")
+      print(error_log)
     }
   }
   return(list(bdd_cluster = Bdd_cluster))
@@ -229,13 +246,12 @@ result_test <- results_dissimilarity(
   matrice_seqdist = matrice_seqdist,
   best_param_diss = best_param_diss,
   path_result = paste0(snakemake@params[["path_result"]],"/"),
-  width = 7,
-  height = 7
+  width = 30,
+  height = 30
 )
 
 bddcluster <-result_test$bdd_cluster %>%
   data.frame() %>%
-  dplyr::rename(Cluster=seq.part_dynamic_diss_best)%>%
   dplyr::mutate(across(everything(), ~as.character(.))) %>%
   dplyr::mutate(across(everything(), ~na_if(., "%")))
 

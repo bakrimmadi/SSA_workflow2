@@ -1,2 +1,2 @@
 "seqsubm";"expcost";"dissimilarite";"Epoch";"Iteration";"Score";"Score_old";"Score_ASW";"Score_HC";"Score_bootmean";"nb_cluster";"transindel";"otto";"a";"b";"tpow"
-"CONSTANT";3;"OMspell";6;10;1,53020642709491;2,27493772459656;0,661948767021128;0,0306696859259669;0,981709876480275;3;;;;;
+"CONSTANT";;"OMstran";5;9;1,24839740151905;1,40135012569913;0,360869959213877;0,0660574424169668;0,745667649688347;9;"subcost";0,786920534066325;;;

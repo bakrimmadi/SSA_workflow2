@@ -1,7 +1,0 @@
-name: convert_long
-channels:
-  - conda-forge
-  - bioconda
-dependencies:
-  - r-base =4.4.0
-  - r-tidyverse =2.0

@@ -49,7 +49,7 @@ Studer, Matthias (2013). WeightedCluster Library Manual: A practical
    10.12682/lives.2296-1658.2013.24
 Messages d'avis :
 1: le package ‘WeightedCluster’ a été compilé avec la version R 4.4.1 
-2: le package ‘cluster’ a été compilé avec la version R 4.4.2 
+2: le package ‘cluster’ a été compilé avec la version R 4.4.3 
 
 Attachement du package : ‘janitor’
 
@@ -59,36 +59,112 @@ Les objets suivants sont masqués depuis ‘package:stats’:
 
 Message d'avis :
 le package ‘janitor’ a été compilé avec la version R 4.4.1 
- ..cutHeight not given, setting it to 1230  ===>  99% of the (truncated) height range in dendro.
+Message d'avis :
+le package ‘ggplot2’ a été compilé avec la version R 4.4.1 
+
+Attachement du package : ‘gridExtra’
+
+L'objet suivant est masqué depuis ‘package:dplyr’:
+
+    combine
+
+Message d'avis :
+le package ‘gridExtra’ a été compilé avec la version R 4.4.1 
+ ..cutHeight not given, setting it to 543  ===>  99% of the (truncated) height range in dendro.
  ..done.
- [>] computing transition probabilities for states AIR/NOXBouteille/NOXCRABE/Oxygen ...
- [>] number of objects (sum of weights): 169
- [>] max. distance: 225
- [>] neighborhood radius: 22.5
- [>] 1 representative(s) selected, coverage=92% (threshold=25%)
- [>] 22 distinct sequence(s)
- [>] number of objects (sum of weights): 87
- [>] max. distance: 225
- [>] neighborhood radius: 22.5
- [>] 1 representative(s) selected, coverage=25% (threshold=25%)
- [>] 83 distinct sequence(s)
- [>] number of objects (sum of weights): 70
- [>] max. distance: 225
- [>] neighborhood radius: 22.5
- [>] 1 representative(s) selected, coverage=30% (threshold=25%)
- [>] 68 distinct sequence(s)
- [>] number of objects (sum of weights): 169
- [>] max. distance: 225
- [>] neighborhood radius: 22.5
- [>] 1 representative(s) selected, coverage=92% (threshold=25%)
- [>] 22 distinct sequence(s)
- [>] number of objects (sum of weights): 87
- [>] max. distance: 225
- [>] neighborhood radius: 22.5
- [>] 1 representative(s) selected, coverage=25% (threshold=25%)
- [>] 83 distinct sequence(s)
- [>] number of objects (sum of weights): 70
- [>] max. distance: 225
- [>] neighborhood radius: 22.5
- [>] 1 representative(s) selected, coverage=30% (threshold=25%)
- [>] 68 distinct sequence(s)
+ [>] computing transition probabilities for states Employement/Further Educ/High Educ/Joblessness/School/Training ...
+ [>] number of objects (sum of weights): 152
+ [>] max. distance: 57.83
+ [>] neighborhood radius: 5.78
+ [>] 1 representative(s) selected, coverage=45% (threshold=25%)
+ [>] 90 distinct sequence(s)
+ [>] number of objects (sum of weights): 126
+ [>] max. distance: 57.83
+ [>] neighborhood radius: 5.78
+ [>] 2 representative(s) selected, coverage=43% (threshold=25%)
+ [>] 107 distinct sequence(s)
+ [>] number of objects (sum of weights): 103
+ [>] max. distance: 57.83
+ [>] neighborhood radius: 5.78
+ [>] 1 representative(s) selected, coverage=36% (threshold=25%)
+ [>] 80 distinct sequence(s)
+ [>] number of objects (sum of weights): 91
+ [>] max. distance: 57.83
+ [>] neighborhood radius: 5.78
+ [>] 1 representative(s) selected, coverage=38% (threshold=25%)
+ [>] 60 distinct sequence(s)
+ [>] number of objects (sum of weights): 60
+ [>] max. distance: 57.83
+ [>] neighborhood radius: 5.78
+ [>] 2 representative(s) selected, coverage=33% (threshold=25%)
+ [>] 56 distinct sequence(s)
+ [>] number of objects (sum of weights): 55
+ [>] max. distance: 57.83
+ [>] neighborhood radius: 5.78
+ [>] 1 representative(s) selected, coverage=44% (threshold=25%)
+ [>] 42 distinct sequence(s)
+ [>] number of objects (sum of weights): 45
+ [>] max. distance: 57.83
+ [>] neighborhood radius: 5.78
+ [>] 6 representative(s) selected, coverage=31% (threshold=25%)
+ [>] 44 distinct sequence(s)
+ [>] number of objects (sum of weights): 41
+ [>] max. distance: 57.83
+ [>] neighborhood radius: 5.78
+ [>] 9 representative(s) selected, coverage=27% (threshold=25%)
+ [>] 41 distinct sequence(s)
+ [>] number of objects (sum of weights): 39
+ [>] max. distance: 57.83
+ [>] neighborhood radius: 5.78
+ [>] 5 representative(s) selected, coverage=31% (threshold=25%)
+ [>] 37 distinct sequence(s)
+ [>] number of objects (sum of weights): 152
+ [>] max. distance: 57.83
+ [>] neighborhood radius: 5.78
+ [>] 1 representative(s) selected, coverage=45% (threshold=25%)
+ [>] 90 distinct sequence(s)
+ [>] number of objects (sum of weights): 152
+ [>] max. distance: 57.83
+ [>] neighborhood radius: 5.78
+ [>] 1 representative(s) selected, coverage=45% (threshold=25%)
+ [>] 90 distinct sequence(s)
+ [>] number of objects (sum of weights): 126
+ [>] max. distance: 57.83
+ [>] neighborhood radius: 5.78
+ [>] 2 representative(s) selected, coverage=43% (threshold=25%)
+ [>] 107 distinct sequence(s)
+ [>] number of objects (sum of weights): 103
+ [>] max. distance: 57.83
+ [>] neighborhood radius: 5.78
+ [>] 1 representative(s) selected, coverage=36% (threshold=25%)
+ [>] 80 distinct sequence(s)
+ [>] number of objects (sum of weights): 91
+ [>] max. distance: 57.83
+ [>] neighborhood radius: 5.78
+ [>] 1 representative(s) selected, coverage=38% (threshold=25%)
+ [>] 60 distinct sequence(s)
+ [>] number of objects (sum of weights): 60
+ [>] max. distance: 57.83
+ [>] neighborhood radius: 5.78
+ [>] 2 representative(s) selected, coverage=33% (threshold=25%)
+ [>] 56 distinct sequence(s)
+ [>] number of objects (sum of weights): 55
+ [>] max. distance: 57.83
+ [>] neighborhood radius: 5.78
+ [>] 1 representative(s) selected, coverage=44% (threshold=25%)
+ [>] 42 distinct sequence(s)
+ [>] number of objects (sum of weights): 45
+ [>] max. distance: 57.83
+ [>] neighborhood radius: 5.78
+ [>] 6 representative(s) selected, coverage=31% (threshold=25%)
+ [>] 44 distinct sequence(s)
+ [>] number of objects (sum of weights): 41
+ [>] max. distance: 57.83
+ [>] neighborhood radius: 5.78
+ [>] 9 representative(s) selected, coverage=27% (threshold=25%)
+ [>] 41 distinct sequence(s)
+ [>] number of objects (sum of weights): 39
+ [>] max. distance: 57.83
+ [>] neighborhood radius: 5.78
+ [>] 5 representative(s) selected, coverage=31% (threshold=25%)
+ [>] 37 distinct sequence(s)
