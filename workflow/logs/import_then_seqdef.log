@@ -37,7 +37,7 @@ downloaded 320 KB
 
 
 Les packages source téléchargés sont dans
-	‘/tmp/RtmpPzi7M4/downloaded_packages’
+	‘/tmp/RtmpxUnDXC/downloaded_packages’
 Mise à jour de la liste HTML des packages dans '.Library'
 Making 'packages.html' ... terminé
 Le chargement a nécessité le package : data.table
@@ -76,7 +76,7 @@ Please type 'citation("TraMineR")' for citation information.
 Message d'avis :
 le package ‘TraMineR’ a été compilé avec la version R 4.4.2 
 Rows: 712 Columns: 86
-── Column specification ─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+── Column specification ─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
 Delimiter: ";"
 chr (85): weight, male, catholic, belfast, n_eastern, southern, s_eastern, w...
 dbl  (1): id

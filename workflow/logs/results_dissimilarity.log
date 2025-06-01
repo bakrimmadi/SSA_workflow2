@@ -1,3 +1,13 @@
+essai de l'URL 'http://cran.univ-lyon1.fr/src/contrib/seqhandbook_0.1.1.tar.gz'
+Content type 'application/x-gzip' length 1720044 bytes (1.6 MB)
+==================================================
+downloaded 1.6 MB
+
+
+Les packages source téléchargés sont dans
+	‘/tmp/RtmpuqshuZ/downloaded_packages’
+Mise à jour de la liste HTML des packages dans '.Library'
+Making 'packages.html' ... terminé
 Le chargement a nécessité le package : TraMineR
 
 TraMineR stable version 2.2-11 (Built: 2024-12-10)
