@@ -132,6 +132,17 @@ choix_criteres:
   timing_etatsRares: "FALSE"
 bounds_OM:
   seqsubm: "c(0L,4L)"
+bounds_OMstran:
+  seqsubm: "c(0L,4L)" #Valeurs entières entre 0 et 4 
+  transindel: "c(0L,2L)" #Valeurs entières entre 0 et 2
+  otto: "c(0.0001, 1)"
+bounds_OMspell:
+  seqsubm: "c(0L,4L)" #Valeurs entières entre 0 et 4
+  expcost: "c(0,3)"
+bounds_SVRspell:
+  a: "c(0,3)"
+  b: "c(0,3)"
+  tpow: "c(0, 3)"
 ```
 
 ---

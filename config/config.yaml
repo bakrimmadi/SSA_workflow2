@@ -1,51 +1,72 @@
-# chemin_bdd : Chemin du fichier avec le nom de la base de données et son extension
+# samples: Path to the CSV file containing the dataset
 samples: "resources/data/Tab_suivi_mvad.csv"
-# bdd_format : Format de la bdd (Long ou wide)    
+
+# bdd_format: Format of the dataset (Long or Wide)
 bdd_format: "Wide"
-# var_id : nom de la variable 
+
+# var_id: Name of the identifier variable
 var_id: "id"
-# var_rep : nom(s) de la ou des variables réponses
+
+# var_rep: Name(s) of the response variables (comma-separated list)
 var_rep: "jul_93, aug_93, sep_93, oct_93, nov_93, dec_93, jan_94, feb_94, mar_94, apr_94, may_94, jun_94, jul_94, aug_94, sep_94, oct_94, nov_94, dec_94, jan_95, feb_95, mar_95, apr_95, may_95, jun_95, jul_95, aug_95, sep_95, oct_95, nov_95, dec_95, jan_96, feb_96, mar_96, apr_96, may_96, jun_96, jul_96, aug_96, sep_96, oct_96, nov_96, dec_96, jan_97, feb_97, mar_97, apr_97, may_97, jun_97, jul_97, aug_97, sep_97, oct_97, nov_97, dec_97, jan_98, feb_98, mar_98, apr_98, may_98, jun_98, jul_98, aug_98, sep_98, oct_98, nov_98, dec_98, jan_99, feb_99, mar_99, apr_99, may_99, jun_99"
-# labels : vecteur contenant les labels des modalités de la variable réponse dans l'ordre alphabétique
+
+# labels: Vector of labels for the response variable's states, in alphabetical order
 labels: "Employement, Further Educ, High Educ, Joblessness, School, Training"
-# path_result : chemin indiquant où exporter les résultats
+
+# path_result: Path to the folder where results should be exported
 path_result: "results/plots"
-# min_cluster_size : Effectif minimum attendu dans chaque cluster (NULL ou valeur numérique)
+
+# min_cluster_size: Minimum expected size for each cluster (NULL or numeric value)
 min_cluster_size: NULL
-# expert : Profil expert (1 : Oui 0: Non)
+
+# expert: Expert mode enabled (1: Yes, 0: No)
 expert: 0
-#### A ne remplir que pour les profils experts ####
-# dissimilarite_expert : Vecteur de dissimilarité saisi par l'expert ex : "OM, OMspell, LCS"
+
+#### Fill in only for expert mode ####
+
+# dissimilarite_expert: Dissimilarity metrics provided by the expert (e.g., "OM, OMspell, LCS")
 dissimilarite_expert: ""
-# fusion_dissimilarites : Fusion des dissimilarités issus des critères et les dissimilarités renseignés par l'utilisateur (1 : Oui 0: Non)
+
+# fusion_dissimilarites: Merge user-defined dissimilarities with those derived from criteria (1: Yes, 0: No)
 fusion_dissimilarites: 0
-# choix_criteres : Choix des critères 
+
+# choix_criteres: Criteria preferences
 choix_criteres: 
-  # sequencement : Interet du sequencement TRUE/FALSE
+  # sequencement: Importance of sequencing TRUE/FALSE
   sequencement: "TRUE"
-  # timing : Interet du timing TRUE/FALSE
+  
+  # timing: Importance of timing TRUE/FALSE
   timing: "FALSE"
-  # duree_etats : Interet de la duree des etats distincts TRUE/FALSE
+  
+  # duree_etats: Importance of the duration of distinct states TRUE/FALSE
   duree_etats: "TRUE"
-  # sequencement_perturbation : Interet de la sensibilité aux petites perturbations TRUE/FALSE
+  
+  # sequencement_perturbation: Importance of sensitivity to small perturbations TRUE/FALSE
   sequencement_perturbation: "FALSE"
-  # timing_etatsRares : Interet particulier pour les etats rares TRUE/FALSE
+  
+  # timing_etatsRares: Specific interest in rare states TRUE/FALSE
   timing_etatsRares: "FALSE"
-# Choix des paramètres selon la dissimilarité
-# dissimilarité : OM
+
+# Parameter bounds by dissimilarity
+
+# Dissimilarity: OM
 bounds_OM:
-  seqsubm: "c(0L,4L)" #Valeurs entières entre 0 et 4
-# dissimilarité : OMstran
+  seqsubm: "c(0L,4L)"  # Integer values between 0 and 4
+
+# Dissimilarity: OMstran
 bounds_OMstran:
-  seqsubm: "c(0L,4L)" #Valeurs entières entre 0 et 4 
-  transindel: "c(0L,2L)" #Valeurs entières entre 0 et 2
+  seqsubm: "c(0L,4L)"  # Integer values between 0 and 4 
+  transindel: "c(0L,2L)"  # Integer values between 0 and 2
   otto: "c(0.0001, 1)"
-# dissimilarité : OMspell
+
+# Dissimilarity: OMspell
 bounds_OMspell:
-  seqsubm: "c(0L,4L)" #Valeurs entières entre 0 et 4
+  seqsubm: "c(0L,4L)"  # Integer values between 0 and 4
   expcost: "c(0,3)"
-# dissimilarité : SVRspell
+
+# Dissimilarity: SVRspell
 bounds_SVRspell:
   a: "c(0,3)"
   b: "c(0,3)"
   tpow: "c(0, 3)"
+
