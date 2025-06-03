@@ -1,4 +1,27 @@
+# Force Snakemake files to be recognized as Python
 *.smk linguist-language=Python
-Snakefile linguist-language=Python
-.test/* linguist-vendored=false
-.test/report.html linguist-generated=true
+
+# Treat R and R Markdown correctly
+*.R    linguist-language=R
+*.Rmd  linguist-language=R
+
+# Exclude config and data files from stats
+*.yml  linguist-detectable=false
+*.yaml linguist-detectable=false
+*.csv  linguist-detectable=false
+*.tsv  linguist-detectable=false
+*.json linguist-detectable=false
+*.txt  linguist-detectable=false
+
+# Exclude render/output files
+*.html linguist-detectable=false
+*.pdf  linguist-detectable=false
+*.png  linguist-detectable=false
+*.svg  linguist-detectable=false
+
+# Exclude JavaScript and TypeScript files from stats (even if mistakenly included/generated)
+*.js   linguist-detectable=false
+*.jsx  linguist-detectable=false
+*.ts   linguist-detectable=false
+*.tsx  linguist-detectable=false
+
