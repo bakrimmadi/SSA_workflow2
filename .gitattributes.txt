@@ -1,0 +1,21 @@
+# Traitement des fichiers Snakemake comme du Python
+*.smk linguist-language=Python
+
+# Détection correcte des notebooks et scripts R
+*.Rmd linguist-language=R
+*.R    linguist-language=R
+
+# Empêcher la prise en compte des fichiers de config/données
+*.yml linguist-detectable=false
+*.yaml linguist-detectable=false
+*.csv linguist-detectable=false
+*.tsv linguist-detectable=false
+*.json linguist-detectable=false
+*.txt linguist-detectable=false
+
+# Empêcher la prise en compte de fichiers de rendu ou rapports
+*.html linguist-detectable=false
+*.pdf  linguist-detectable=false
+*.png  linguist-detectable=false
+*.svg  linguist-detectable=false
+
