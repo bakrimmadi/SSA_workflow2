@@ -1,5 +1,4 @@
-# SSA_workflow
-A scientific workflow for state sequence Analysis
+# SSA_workflow : A scientific workflow for state sequence Analysis
 ---
 title: "SSA Workflow – State Sequence Analysis & Visualization"
 author: "Bakridine MMADI MRENDA"
