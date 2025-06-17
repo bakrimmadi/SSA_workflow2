@@ -36,24 +36,6 @@ This document explains the structure and usage of the `config.yaml` file used in
 
 ---
 
-## 🧠 Expert Mode Settings
-
-- **`expert`**  
-  Whether the expert mode is enabled:  
-  - `1`: Yes  
-  - `0`: No  
-
-- **`dissimilarite_expert`**  
-  Optional: List of expert-specified dissimilarities (e.g., `"OM, OMspell, LCS"`).  
-  _Used only if `expert: 1`._
-
-- **`fusion_dissimilarites`**  
-  Whether to merge expert and automatically selected dissimilarities:  
-  - `1`: Yes  
-  - `0`: No  
-
----
-
 ## 🎯 Criteria Selection
 
 Defined in the nested section `choix_criteres`, used for dissimilarity selection:
@@ -66,10 +48,29 @@ Defined in the nested section `choix_criteres`, used for dissimilarity selection
 
 ---
 
+## 🧠 Expert Mode Settings
+
+- **`expert`**  
+  Whether the expert profile is enabled:  
+  - `1`: Yes  
+  - `0`: No  
+
+- **`dissimilarite_expert`**  
+  Optional: List of expert-specified dissimilarities (e.g., `"HAM, CHI2, EUCLID, OM, OMspell, LCS, OMstran, SVRspell"`).  
+  _Used only if `expert: 1`._
+
+- **`fusion_dissimilarites`**  
+  Whether to merge expert and automatically selected dissimilarities:  
+  - `1`: Yes  
+  - `0`: No
+  _Used only if `expert: 1`._
+
+---
+
 ## ⚙️ Dissimilarity Parameters (Hyperparameter Ranges)
 
 Dissimilarities used for clustering require parameter bounds. These are specified for each dissimilarity type:
-
+_Used only if `expert: 1`._
 ### 🔹 `OM` (Optimal Matching)
 
 ```yaml
@@ -108,7 +109,7 @@ bounds_SVRspell:
 ## 📝 Notes
 
 - All parameter bounds must be expressed in `R` vector notation (`c(x, y)`).
-- If `expert: 0`, the fields under `"dissimilarite_expert"` and `"fusion_dissimilarites"` are ignored.
+- If `expert: 0`, the fields under `"dissimilarite_expert"` are ignored.
 - Ensure your input file matches the specified `bdd_format`.
 
 ---

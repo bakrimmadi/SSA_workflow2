@@ -16,20 +16,6 @@ labels: "Employement, Further Educ, High Educ, Joblessness, School, Training"
 # path_result: Path to the folder where results should be exported
 path_result: "results/plots"
 
-# min_cluster_size: Minimum expected size for each cluster (NULL or numeric value)
-min_cluster_size: NULL
-
-# expert: Expert mode enabled (1: Yes, 0: No)
-expert: 0
-
-#### Fill in only for expert mode ####
-
-# dissimilarite_expert: Dissimilarity metrics provided by the expert (e.g., "OM, OMspell, LCS")
-dissimilarite_expert: ""
-
-# fusion_dissimilarites: Merge user-defined dissimilarities with those derived from criteria (1: Yes, 0: No)
-fusion_dissimilarites: 0
-
 # choix_criteres: Criteria preferences
 choix_criteres: 
   # sequencement: Importance of sequencing TRUE/FALSE
@@ -46,6 +32,20 @@ choix_criteres:
   
   # timing_etatsRares: Specific interest in rare states TRUE/FALSE
   timing_etatsRares: "FALSE"
+  
+# expert: Expert mode enabled (1: Yes, 0: No)
+expert: 0
+
+#### Fill in only for expert mode ####
+
+# dissimilarite_expert: Dissimilarity metrics provided by the expert (e.g., "OM, OMspell, LCS")
+dissimilarite_expert: ""
+
+# fusion_dissimilarites: Merge user-defined dissimilarities with those derived from criteria (1: Yes, 0: No)
+fusion_dissimilarites: 0
+
+# min_cluster_size: Minimum expected size for each cluster (NULL or numeric value)
+min_cluster_size: NULL
 
 # Parameter bounds by dissimilarity
 
