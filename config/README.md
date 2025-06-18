@@ -71,6 +71,19 @@ Defined in the nested section `choix_criteres`, used for dissimilarity selection
 
 Dissimilarities used for clustering require parameter bounds. These are specified for each dissimilarity type:
 _Used only if `expert: 1`._
+
+seqsubm	: How to generate the costs.The substitution-cost matrix when a matrix and method is one of "OM", "OMspell", "OMstran", "HAM".
+One of 0L = "CONSTANT" (same cost for all substitutions), 1L = "TRATE" (derived from the observed transition rates), 2L = "FUTURE" (Chi-squared distance between conditional state distributions lag positions ahead), 3L = "FEATURES" (Gower distance between state features), 4L = "INDELSLOG" (based on estimated indel costs).
+
+transindel	: Method for computing transition indel costs when method = "OMstran". 
+One of 0L = "constant" (single indel of 1.0), 1L = "subcost" (based on substitution costs), or 2L = "prob" (based on transition probabilities).
+
+otto  : The origin-transition trade-off weight when method = "OMstran". It must be in [0, 1].
+
+expcost	: The cost of spell length transformation when method = "OMspell". It must be positive. The exact interpretation is distance-dependent.
+
+tpow	: The exponential weight of spell length when method is one of "OMspell" or "SVRspell".
+
 ### 🔹 `OM` (Optimal Matching)
 
 ```yaml
