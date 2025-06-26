@@ -20,57 +20,85 @@ This Snakemake workflow automates:
 - [Miniconda](https://docs.conda.io/en/latest/miniconda.html) or Anaconda
 - Git (optional but recommended)
 
+## Windows Users – Use WSL (Windows Subsystem for Linux)
+
+Some packages and workflows may not run correctly on native Windows. We recommend using WSL:
+### Steps to Enable WSL
+1. Open PowerShell as Administrator and run:
+   ```powershell
+   wsl --install
+   ```
+2. Restart your computer.
+3. Open Ubuntu (or your chosen distribution) from the Start Menu.
+4. Update packages:
+   ```bash
+   sudo apt update && sudo apt upgrade
+   ```
+5. Install Miniconda and Git as shown above for Linux.
+
+### 1. [Miniconda](https://docs.conda.io/en/latest/miniconda.html)
+
+#### macOS
+- Download the installer from: https://repo.anaconda.com/miniconda/Miniconda3-latest-MacOSX-x86_64.sh
+- Open Terminal and run:
+  ```bash
+  bash Miniconda3-latest-MacOSX-x86_64.sh
+  ```
+- Follow the instructions to complete installation.
+
+#### Linux
+- Download the installer from: https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86_64.sh
+- Open a terminal and run:
+  ```bash
+  bash Miniconda3-latest-Linux-x86_64.sh
+  ```
+
+### 2. [Git](https://git-scm.com/)
+
+#### macOS (via Homebrew)
+```bash
+brew install git
+```
+
+#### Linux (Debian/Ubuntu)
+```bash
+sudo apt update
+sudo apt install git
+```
 ---
 
 ## 🚀 Deployment
 
-### Step 1: Install Snakemake and Snakedeploy
+### Step 1: Install Snakemake 
 
 We recommend using [Mamba](https://github.com/mamba-org/mamba) (a faster alternative to Conda).  
-To install both **Snakemake** and **Snakedeploy** in an isolated environment:
+To install both **Snakemake**  in an isolated environment:
+
+## Clone the Repository
 
 ```bash
-mamba create -c conda-forge -c bioconda --name snakemake snakemake snakedeploy
+git clone https://github.com/bakrimmadi/SSA_workflow2.git
+cd SSA_workflow2/workflow
+```
+## Create the Conda Environment
+```bash
+conda create -c conda-forge -c bioconda --name snakemake snakemake
 conda activate snakemake
 ```
+to install Snakemake in an isolated environment.
 
-If you don’t have Mamba, you can use Conda instead (conda install).
-
-to install both Snakemake and Snakedeploy in an isolated environment. For all following commands ensure that this environment is activated via
-
-```bash
-conda activate snakemake
-```
-
-## Step 2: Deploy workflow
-With Snakemake and Snakedeploy installed, the workflow can be deployed as follows.
-First, create an appropriate project working directory on your system and enter it:
-
-```bash
-mkdir -p path/to/project-workdir
-cd path/to/project-workdir
-```
-
-In all following steps, we will assume that you are inside of that directory. Then run
-```bash
-snakedeploy deploy-workflow https://github.com/bakrimmadi/SSA_workflow2 . --tag v2.1.2
-```
-Snakedeploy will create two folders, workflow and config.
-The former contains the deployment of the chosen workflow as a Snakemake module, the latter contains configuration files which will be modified in the next step in order to configure the workflow to your needs.
-
-## Step 3: Configure workflow
+## Step 2: Configure workflow
 To configure the workflow, adapt config/config.yml to your needs.
 
-## Step 4: Run workflow
-The deployment method is controlled using the --software-deployment-method (short --sdm) argument.
-To run the workflow with automatic deployment of all required software via conda/mamba, use
+## Step 3: Run workflow
+To run the workflow with conda environments, use
 
 ```bash
-snakemake --cores all --sdm conda
+snakemake --use-conda --cores all
 ```
-Snakemake will automatically detect the main Snakefile in the workflow subfolder and execute the workflow module that has been defined by the deployment in step 2.
+Snakemake will automatically detect the main Snakefile in the workflow subfolder and execute the workflow.
 
-## Step 5: Generate report
+## Step 4: Generate report
 After finalizing your data analysis, you can automatically generate an interactive visual HTML report for inspection of results together with parameters and code inside of the browser using
 
 ```bash
