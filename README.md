@@ -24,17 +24,20 @@ This Snakemake workflow automates:
 
 Some packages and workflows may not run correctly on native Windows. We recommend using WSL:
 ### Steps to Enable WSL
-1. Open PowerShell as Administrator and run:
-   ```powershell
-   wsl --install
-   ```
-2. Restart your computer.
-3. Open Ubuntu (or your chosen distribution) from the Start Menu.
-4. Update packages:
+1. Go to Microsoft’s official page to install WSL:
+[WSL](https://learn.microsoft.com/fr-fr/windows/wsl/install)
+This will walk you through:
+- Enabling required features
+- Choosing a Linux distribution (e.g., Debian)
+- Installing WSL 2 (the recommended version)
+
+3. Restart your computer.
+4. Open Ubuntu (or your chosen distribution) from the Start Menu.
+5. Update packages:
    ```bash
    sudo apt update && sudo apt upgrade
    ```
-5. Install Miniconda and Git as shown above for Linux.
+6. Install Miniconda and Git as shown above for Linux.
 
 ### 1. [Miniconda](https://docs.conda.io/en/latest/miniconda.html)
 
@@ -102,9 +105,11 @@ Snakemake will automatically detect the main Snakefile in the workflow subfolder
 After finalizing your data analysis, you can automatically generate an interactive visual HTML report for inspection of results together with parameters and code inside of the browser using
 
 ```bash
-snakemake --sdm conda --report report.zip
+snakemake --report report.html
+sudo apt update && sudo apt install unzip
 unzip report.zip
 ```
+Open report.html with Microsoft Edge.
 
 # Configuration
 
